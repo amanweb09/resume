@@ -1,0 +1,76 @@
+.c1 {
+    animation: conf1 2s 1 linear;
+    right: 100px
+}
+.c2 {
+    animation: conf2 2s 1 linear;
+    right: 150px
+}
+.c3 {
+    animation: conf3 2s 1 linear;
+    right: 70px
+}
+.c4 {
+    animation: conf4 2s 1 linear;
+    right: 125px
+}
+.c5 {
+    animation: conf1    2s 0.5s 1 linear;
+    right: 20px
+}
+.c6 {
+    animation: conf1 2s 0.25s 1 linear;
+    left: 100px
+}
+.c7 {
+    animation: conf1 2s 0.5s 1 linear;
+    left: 50px
+}
+.c8 {
+    animation: conf1 2s 0.25s 1 linear;
+    left: 100px
+}
+
+@keyframes conf1 {
+    from {
+        bottom: -20px;
+        opacity: 1;
+    }
+    to {
+        top: 100px;
+        opacity: 0;
+    }
+}
+
+@keyframes conf2 {
+    from {
+        bottom: -40px;
+        opacity: 1;
+    }
+    to {
+        top: 150px;
+        opacity: 0;
+    }
+}
+
+@keyframes conf3 {
+    from {
+        bottom: -60px;
+        opacity: 1;
+    }
+    to {
+        top: 100px;
+        opacity: 0;
+    }
+}
+
+@keyframes conf4 {
+    from {
+        bottom: -100px;
+        opacity: 1;
+    }
+    to {
+        top: 120px;
+        opacity: 0;
+    }
+}
