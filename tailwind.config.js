@@ -7,6 +7,12 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+        bg1: "url('/images/bg.jpg')",
+        bg2: "url('/images/bg1.jpg')",
+        bg3: "url('/images/bg2.jpg')",
+        bg4: "url('/images/bg3.jpg')"
+      },
       colors: {
         dark: {
           head: '#1A1A1A',

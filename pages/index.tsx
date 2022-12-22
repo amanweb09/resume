@@ -56,7 +56,7 @@ const Home: NextPage = () => {
             {/* sidebar */}
             <div
                 data-aos="fade-right"
-                className="flex items-center border-4 border-solid dark:border-indigo-500 border-indigo-200 shadow-xl w-1/4 hidden sm:block">
+                className="flex items-center border-4 border-solid dark:border-indigo-500 border-indigo-200 shadow-xl w-1/4 hidden sm:block bg-bg3">
 
                 <div className='px-4 text-white fixed mt-6'>
 
@@ -143,7 +143,8 @@ const Home: NextPage = () => {
 
 
                     {/* text message */}
-                    <div className="flex flex-col justify-between items-center w-full">
+                    <div
+                        className="flex flex-col justify-between items-center w-full message-container bg-bg1 bg-opacity-25">
 
                         <div className='my-4'>
                             <span className="text-xs font-semibold text-gray-400">New Message</span>
@@ -182,23 +183,23 @@ const Home: NextPage = () => {
 
                             <div className="flex items-center justify-between mt-8 dark:bg-dark-head bg-light-head p-4 w-full">
                                 <a
-                                    data-aos="fade-up"
+                                    // data-aos="fade-up"
                                     href="#">
                                     <div className="w-16 sm:w-24 h-10 sm:h-14 rounded-full dark:bg-white bg-gray-100 flex-center hover:scale-125 transition-all">
                                         <img src="/images/github.png" alt="" className='h-8 sm:h-10' />
                                     </div>
                                 </a>
-                                <a data-aos="fade-up" href="#">
+                                <a href="#">
                                     <div className="w-16 sm:w-24 h-10 sm:h-14 rounded-full bg-amber-500 flex-center hover:scale-125 transition-all">
                                         <img src="/images/whatsapp.png" alt="" className='h-8 sm:h-10' />
                                     </div>
                                 </a>
-                                <a data-aos="fade-up" href="#">
+                                <a href="#">
                                     <div className="w-16 sm:w-24 h-10 sm:h-14 rounded-full bg-blue-general flex-center hover:scale-125 transition-all">
                                         <img src="/images/mail.png" alt="" className='h-8 sm:h-10' />
                                     </div>
                                 </a>
-                                <div data-aos="fade-up" className="w-16 sm:w-24 h-10 sm:h-14 w-12 h-8 rounded-full dark:bg-green-custom bg-green-custom/50 flex-center">
+                                <div className="w-16 sm:w-24 h-10 sm:h-14 w-12 h-8 rounded-full dark:bg-green-custom bg-green-custom/50 flex-center">
                                     <div className="w-2 h-2 rounded-full  bg-light-head"></div>
                                     <div className="w-2 h-2 rounded-full mx-1 bg-light-head"></div>
                                     <div className="w-2 h-2 rounded-full  bg-light-head"></div>
