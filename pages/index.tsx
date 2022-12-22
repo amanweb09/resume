@@ -1,6 +1,6 @@
 // import { Inter } from '@next/font/google'
 import { NextPage } from 'next'
-import { ChevronRightIcon, ArrowUpIcon, SunIcon, ArrowDownTrayIcon, ArrowTopRightOnSquareIcon, BookOpenIcon, BellIcon } from '@heroicons/react/24/outline'
+import { ChevronRightIcon, ArrowUpIcon, SunIcon, ArrowDownTrayIcon, ArrowTopRightOnSquareIcon, BellIcon, ArrowSmallUpIcon } from '@heroicons/react/24/outline'
 import { skills } from '../constants/skills'
 import SkillCard from '../components/SkillCard'
 import ProjectCard from '../components/ProjectCard'
@@ -8,6 +8,7 @@ import { projects } from '../constants/projects'
 import React, { useEffect, useState } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Head from 'next/head'
 
 const Home: NextPage = () => {
 
@@ -51,6 +52,10 @@ const Home: NextPage = () => {
     }
 
     return (
+        <>
+        <Head>
+            <title>Aman Khanna - Web Developer</title>
+        </Head>
         <div className='flex overflow-hidden dark:bg-black dark:text-white text-black bg-white w-full min-h-screen transition-all'>
 
             {/* sidebar */}
@@ -79,6 +84,13 @@ const Home: NextPage = () => {
                         href="#projects">
                         <ArrowTopRightOnSquareIcon className='w-4 h-4' />
                         <span className='font-bold ml-2'>My Projects</span>
+                    </a>
+
+                    <a
+                        className='flex px-4 py-2 rounded-md w-max  text-white shadow-lg mt-4 hover:scale-125 transition-all bg-gray-300 rounded-md border border-gray-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0'
+                        href="#">
+                        <ArrowSmallUpIcon className='w-4 h-4' />
+                        <span className='font-bold ml-2'>Scroll to Top</span>
                     </a>
 
                 </div>
@@ -261,6 +273,7 @@ const Home: NextPage = () => {
             </div>
 
         </div>
+        </>
     )
 }
 
