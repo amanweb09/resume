@@ -6,10 +6,15 @@ import SkillCard from '../components/SkillCard'
 import ProjectCard from '../components/ProjectCard'
 import { projects } from '../constants/projects'
 import React, { useEffect, useState } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home: NextPage = () => {
 
     useEffect(() => {
+
+        AOS.init();
+
         document.body.classList.add('dark')
         window.localStorage.setItem('theme', 'dark')
     }, [])
@@ -36,39 +41,43 @@ const Home: NextPage = () => {
     return (
         <div className='flex dark:bg-black dark:text-white text-black bg-white w-full min-h-screen transition-all'>
 
-            <div className="flex items-center dark:bg-rose-600 bg-rose-100 shadow-xl w-1/4 hidden sm:block">
-                <div className='w-full h-24 dark:bg-dark-head bg-light-head flex items-center px-4'>
-                    <h1 className=' text-xl flex items-center'>
-                        <BookOpenIcon className='w-6 h-6 mr-2' />
-                        Some Links for You...
-                    </h1>
-                </div>
-                <div className='px-4 text-white fixed'>
+            {/* sidebar */}
+            <div
+                data-aos="fade-right"
+                className="flex items-center border-4 border-solid dark:border-indigo-500 border-indigo-200 shadow-xl w-1/4 hidden sm:block">
+
+                <div className='px-4 text-white fixed mt-6'>
+
                     <a
-                        className='flex px-4 py-2 rounded-md w-max bg-blue-message shadow-lg mt-4 hover:scale-125 transition-all hover:bg-green-custom'
-                        href="">
+                        className='flex px-4 py-2 rounded-md w-max dark:bg-white dark:text-black bg-blue-message text-white shadow-lg mt-4 hover:scale-125 transition-all hover:bg-green-custom'
+                        href="#who-am-i">
                         <ArrowTopRightOnSquareIcon className='w-4 h-4' />
                         <span className='font-bold ml-2'>Who am I?</span>
                     </a>
+
                     <a
-                        className='flex px-4 py-2 rounded-md w-max bg-blue-message shadow-lg mt-4 hover:scale-125 transition-all hover:bg-green-custom'
-                        href="">
+                        className='flex px-4 py-2 rounded-md w-max dark:bg-white dark:text-black bg-blue-message text-white shadow-lg mt-4 hover:scale-125 transition-all hover:bg-green-custom'
+                        href="#specialization">
                         <ArrowTopRightOnSquareIcon className='w-4 h-4' />
                         <span className='font-bold ml-2'>What Do I Specialize In?</span>
                     </a>
+
                     <a
-                        className='flex px-4 py-2 rounded-md w-max bg-blue-message shadow-lg mt-4 hover:scale-125 transition-all hover:bg-green-custom'
-                        href="">
+                        className='flex px-4 py-2 rounded-md w-max dark:bg-white dark:text-black bg-blue-message text-white shadow-lg mt-4 hover:scale-125 transition-all hover:bg-green-custom'
+                        href="#projects">
                         <ArrowTopRightOnSquareIcon className='w-4 h-4' />
                         <span className='font-bold ml-2'>My Projects</span>
                     </a>
+
                 </div>
+
             </div>
 
+            {/* theme */}
             <div
                 style={{ zIndex: '999' }}
                 onClick={handleTheme}
-                className="fixed flex-center right-2 top-10 border w-14 h-14 rounded-md shadow-xl dark:bg-dark-message bg-light-message">
+                className="fixed flex-center right-2 top-10 border w-14 h-14 rounded-md shadow-xl bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0">
                 <SunIcon
                     className='w-8 h-8 dark:text-white text-black' />
             </div>
@@ -77,10 +86,14 @@ const Home: NextPage = () => {
                 <section className="w-full relative h-screen flex flex-col justify-between">
 
                     {/* header */}
-                    <div className='w-full h-1/4 dark:bg-dark-head bg-light-head shadow-b-md flex flex-col items-center justify-center'>
+                    <div
+                        data-aos="flip-down"
+                        className='w-full h-1/4 bg-gradient-to-r dark:from-indigo-500 from-indigo-200 dark:via-purple-500 via-purple-200 dark:to-pink-500 to-pink-200 shadow-b-md flex flex-col items-center justify-center'>
 
                         <a href="#">
-                            <div className="absolute flex-center sm:w-40 bg-blue-message text-white top-2 left-2 rounded-md text-xs sm:p-4 p-2 hover:bg-blue-general font-semibold">
+                            <div
+                                data-aos="zoom-in"
+                                className="absolute flex-center sm:w-40 bg-dark-head text-white top-2 left-2 rounded-md text-xs sm:p-4 p-2 hover:bg-green-custom shadow-lg font-semibold">
                                 <ArrowDownTrayIcon className='w-4 h-4 text-white' />
                                 Resume
                             </div>
@@ -106,16 +119,20 @@ const Home: NextPage = () => {
                             <span className="text-xs text-gray-400 block">Today, {currentTime}</span>
                         </div>
 
-                        <div>
+                        <div className=''>
 
                             {/* messsages */}
                             <div className='px-4'>
-                                <div className="dark:bg-dark-message bg-light-message p-4 rounded-md max-w-3/4">
-                                    Hi, <br />
-                                    I'm Aman Khanna, a <span className="text-lg font-semibold">Full-Stack Web Developer</span>
-                                    who is looking for growth oriented opportunities to grow and become a helping hand to the company.
+                                <div
+                                    data-aos="fade-right"
+                                    className="sm:w-3/4 bg-gradient-to-r from-yellow-200 via-orange-200 to-red-200 shadow-lg dark:from-yellow-600 dark:via-orange-500 dark:to-red-500 p-4 rounded-md max-w-3/4 sm:max-w-1/2">
+                                    Hi, <img src="/images/hands.png" className='w-4 inline-block' alt="" /> <br /><br />
+                                    I'm Aman Khanna, a <span className="text-lg font-semibold underline">Full-Stack Web Developer</span>
+                                    , who is looking for growth oriented opportunities to grow and become a helping hand to the company.
                                 </div>
-                                <div className="dark:bg-dark-message bg-light-message p-4 rounded-md w-max max-w-3/4 mt-4">
+                                <div
+                                    data-aos="fade-right"
+                                    className="bg-gradient-to-r from-yellow-200 via-orange-200 to-red-200 shadow-lg dark:from-yellow-600 dark:via-orange-500 dark:to-red-500 p-4 rounded-md w-max max-w-3/4 mt-4">
                                     Here is what is do...
                                 </div>
                                 {/* {
@@ -135,11 +152,11 @@ const Home: NextPage = () => {
                                     // }
                                     // value={message}
                                     placeholder='Type a message'
-                                    className='outline-none border border-gray-600 rounded-md flex-1 bg-transparent py-1 px-2'
+                                    className='outline-none border border-gray-600 rounded-md flex-1 bg-transparent py-2 mt-2 px-2'
                                     type="text" />
                                 <div
                                     // onClick={handleMessage}
-                                    className="bg-green-custom flex ml-4 items-center justify-center w-8 h-8 rounded-full">
+                                    className="bg-green-custom flex ml-4 cursor-pointer items-center justify-center w-8 h-8 rounded-full">
                                     <ArrowUpIcon className='w-5 h-5 text-white' />
                                 </div>
                                 {/* <MessageConfetti text={'hello'}/> */}
@@ -153,15 +170,15 @@ const Home: NextPage = () => {
                                 </a>
                                 <a href="#">
                                     <div className="w-16 sm:w-24 h-10 sm:h-14 rounded-full bg-amber-500 flex-center hover:scale-125 transition-all">
-                                        <img src="/images/whatsapp.png" alt="" className='h-8' />
+                                        <img src="/images/whatsapp.png" alt="" className='h-8 sm:h-10' />
                                     </div>
                                 </a>
                                 <a href="#">
                                     <div className="w-16 sm:w-24 h-10 sm:h-14 rounded-full bg-blue-general flex-center hover:scale-125 transition-all">
-                                        <img src="/images/mail.png" alt="" className='h-8' />
+                                        <img src="/images/mail.png" alt="" className='h-8 sm:h-10' />
                                     </div>
                                 </a>
-                                <div className="w-16 sm:w-24 h-10 sm:h-14 w-12 h-8 rounded-full dark:bg-dark-head bg-light-head flex-center">
+                                <div className="w-16 sm:w-24 h-10 sm:h-14 w-12 h-8 rounded-full dark:bg-green-custom bg-green-custom/50 flex-center">
                                     <div className="w-2 h-2 rounded-full  bg-light-head"></div>
                                     <div className="w-2 h-2 rounded-full mx-1 bg-light-head"></div>
                                     <div className="w-2 h-2 rounded-full  bg-light-head"></div>
@@ -171,7 +188,7 @@ const Home: NextPage = () => {
                     </div>
                 </section>
 
-                <section className=' py-10 px-4 dark:bg-dark-head bg-light-head'>
+                <section id='who-am-i' className=' py-10 px-4 dark:bg-dark-head bg-light-head'>
                     <h1 className='text-xl'><span className='text-green-custom'>WHO</span> AM I?</h1>
 
                     <p className='text-justify mt-4'>
@@ -179,7 +196,7 @@ const Home: NextPage = () => {
                     </p>
                 </section>
 
-                <section className=" py-6 px-4">
+                <section id='specialization' className=" py-6 px-4">
                     <h1 className='text-xl'>WHAT DO I <span className="text-blue-general dark:text-blue-300">SPECIALIZE</span> IN?</h1>
 
                     <div className='flex flex-col mt-10'>
@@ -203,7 +220,7 @@ const Home: NextPage = () => {
                     <div className="w-max bg-blue-message p-2 rounded-md block mt-2">??</div>
                 </section>
 
-                <section>
+                <section id='projects'>
                     {
                         projects.map((project) => {
                             return <ProjectCard
