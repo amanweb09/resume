@@ -4,13 +4,10 @@ interface IPropTypes {
     text: string
 }
 
-const SkillCard = ({text, icon}: IPropTypes) => {
+const SkillCard = ({text, icon, ...rest}: IPropTypes) => {
   return (
-    <div className="flex items-center mb-4">
-        
-        {/* <div className="w-20  bg-dark-head shadow-md rounded-full flex-center">
-          
-        </div> */}
+    <div {...rest} className="flex items-center mb-4">
+      
           <img 
                 className="w-12"
                 src={icon} 
